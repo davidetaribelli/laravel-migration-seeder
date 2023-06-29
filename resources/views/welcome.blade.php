@@ -10,6 +10,7 @@
                     <li class="list-group-item">Azienda: {{$train->azienda}}</li>
                     <li class="list-group-item">Partenza: {{$train->stazione_di_partenza}}</li>
                     <li class="list-group-item">Arrivo: {{$train->stazione_di_arrivo}}</li>
+                    <li class="list-group-item">Data: {{$train->data_partenza}}</li>
                     <li class="list-group-item">Orario partenza: {{$train->orario_di_partenza}}</li>
                     <li class="list-group-item">Orario arrivo: {{$train->orario_di_arrivo}}</li>
                     <li class="list-group-item">Codice: {{$train->cod_treno}}</li>
