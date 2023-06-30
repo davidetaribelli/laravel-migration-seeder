@@ -11,7 +11,7 @@ class PageController extends Controller
 {
     public function index(){
  
-        $trains = secondTrain::where('data_partenza', '2023-06-29')->get();
+        $trains = secondTrain::all();
         return view('welcome', compact('trains'));
     }
 }
