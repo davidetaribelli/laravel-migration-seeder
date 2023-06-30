@@ -16,7 +16,7 @@ class Second_trainsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run_che_non_viene_eseguita()
     {
         $trains = [
             [
@@ -108,6 +108,23 @@ class Second_trainsTableSeeder extends Seeder
             $newTrain->n_carrozze = $train['n_carrozze'];
             $newTrain->in_orario = $train['in_orario'];
             $newTrain->cancellato = $train['cancellato'];
+            $newTrain->save();
+        }
+    }
+
+    public function run(Faker $faker){
+        for($i=0; $i<6; $i++){
+            $newTrain = new secondTrain();
+            $newTrain->azienda = $faker->word();
+            $newTrain->stazione_di_partenza = $faker->sentence(4);
+            $newTrain->stazione_di_arrivo = $faker->sentence(4);
+            $newTrain->data_partenza = $faker->date();
+            $newTrain->orario_di_partenza = $faker->time();
+            $newTrain->orario_di_arrivo = $faker->time();
+            $newTrain->cod_treno = $faker->md5();
+            $newTrain->n_carrozze =  $faker->randomFloat(0, 10, 12);
+            $newTrain->in_orario = $faker->boolean();
+            $newTrain->cancellato = $faker->boolean();
             $newTrain->save();
         }
     }
